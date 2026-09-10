@@ -12,7 +12,7 @@ Complete this before or while building `units.py`.
 | Other | | | | |
 
 ## Boundary Rule
-Write one sentence describing where conversion happens in your tool.
+All incoming values are converted to their internal units in units.py before the volume calculation.
 
 ## Duplicate-Conversion Risk
-Identify one place where a conversion could accidentally be applied twice.
+Depth could be divided by 12 in units.py and divided by 12 again in the volume calculation.
