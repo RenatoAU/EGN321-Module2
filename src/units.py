@@ -16,25 +16,28 @@ Design requirements:
 # Example pattern:
 # INCHES_PER_FOOT = 12.0
 
+INCHES_PER_FOOT = 12.0
+GALLONS_PER_CUBIC_FOOT = 7.48052
+
 
 def inches_to_feet(inches):
-    """Convert a length from inches to feet."""
-    raise NotImplementedError("Implement inches_to_feet().")
+    """Convert inches to feet."""
+    return inches / INCHES_PER_FOOT
 
 
 def feet_to_inches(feet):
-    """Convert a length from feet to inches."""
-    raise NotImplementedError("Implement feet_to_inches().")
+    """Convert feet to inches."""
+    return feet * INCHES_PER_FOOT
 
 
 def cubic_feet_to_gallons(cubic_feet):
-    """Convert a volume from cubic feet to US gallons."""
-    raise NotImplementedError("Implement cubic_feet_to_gallons().")
+    """Convert cubic feet to US gallons."""
+    return cubic_feet * GALLONS_PER_CUBIC_FOOT
 
 
 def gallons_to_cubic_feet(gallons):
-    """Convert a volume from US gallons to cubic feet."""
-    raise NotImplementedError("Implement gallons_to_cubic_feet().")
+    """Convert US gallons to cubic feet."""
+    return gallons / GALLONS_PER_CUBIC_FOOT
 
 
 # TODO:
