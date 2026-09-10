@@ -15,11 +15,11 @@ This module exists so I have one tested, reliable place to do unit conversions i
 Add any additional conversions required by your Module 2 workbook.
 
 ## Design Rules
-# Naming pattern: 
+### Naming pattern: 
 every function is named input_to_output() (e.g. inches_to_feet), so you can tell exactly what it does without opening the file.
-# Constants: 
+### Constants: 
 conversion factors (INCHES_PER_FOOT, GALLONS_PER_CUBIC_FOOT) are defined once at the top of units.py instead of hard-coded inside each function. That way if a factor ever needs correcting, it only has to change in one place, and it's obvious where each number in the math is coming from.
-# One conversion per function: 
+### One conversion per function: 
 each function does exactly one job. This makes every function independently testable (see below) and means a bug in one conversion can't silently break another.
 
 ## Conversion Sources
@@ -40,9 +40,9 @@ Explain:
 - Zero-value tests: 0 of any unit should always convert to 0 — this catches any accidental additive offset in the conversion math.
 
 ## Reuse in Later Modules
-# A growing toolkit: 
+### A growing toolkit: 
 as later modules need new conversions, they can be added to this same file following the pattern already set here, so units.py keeps getting more useful instead of each module starting from zero.
-# More reliable results: 
+### More reliable results: 
 because every later calculation pulls from the same tested functions, results stay consistent across workbooks instead of small differences creeping in from retyped math.
 
 ## Known Limitations
@@ -51,3 +51,18 @@ Only supports the four conversions listed above — no metric units, no temperat
 
 ## AI Use
 If AI was used, summarize it here and provide details in `AI_LOG.md`.
+
+## Commits
+
+### Add Module 2 project structure
+Set up src/ and tests/ folders, requirements.txt, and placeholder README/AI_LOG files.
+### Implement length and volume conversions with named constants
+Add inches_to_feet, feet_to_inches, cubic_feet_to_gallons, gallons_to_cubic_feet with INCHES_PER_FOOT and GALLONS_PER_CUBIC_FOOT as named constants.
+### Add known-value, reverse, round-trip, and zero-value tests
+19 tests covering all four required categories; all passing.
+### Document conversion sources and reuse in README
+Add NIST sources, the convert-at-the-boundary design rule, test strategy, and reuse rationale.
+
+## Resource Links
+NIST Unit Conversion: https://www.nist.gov/pml/owm/metric-si/unit-conversion
+NIST SI Units: https://www.nist.gov/pml/owm/metric-si/si-units
