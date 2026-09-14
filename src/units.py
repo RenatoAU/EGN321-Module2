@@ -1,6 +1,6 @@
 """
 EGN 321 — Module 2
-Assignment 2.1 — Conversion Module
+Assignment 2.2 — Conversion Module
 
 Build reusable unit-conversion functions here.
 
