@@ -40,6 +40,19 @@ def gallons_to_cubic_feet(gallons):
     return gallons / GALLONS_PER_CUBIC_FOOT
 
 
+KPA_PER_PSI = 6.89476
+
+
+def kpa_to_psi(kpa):
+    """Convert pressure from kilopascals to pounds per square inch."""
+    return kpa / KPA_PER_PSI
+
+
+def psi_to_kpa(psi):
+    """Convert pressure from pounds per square inch to kilopascals."""
+    return psi * KPA_PER_PSI
+
+
 # TODO:
 # Add any additional conversions required by your assigned Module 2 workbook.
 # Keep each conversion in a separate, clearly named function.
