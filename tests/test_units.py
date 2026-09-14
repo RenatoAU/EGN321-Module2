@@ -1,6 +1,6 @@
 """
 EGN 321 — Module 2
-Assignment 2.1 — Conversion Module Tests
+Assignment 2.2 — Conversion Module Tests
 
 Minimum expectations:
 - 4 known-value conversion tests
@@ -61,3 +61,28 @@ def test_zero_value():
     assert feet_to_inches(0) == pytest.approx(0)
     assert cubic_feet_to_gallons(0) == pytest.approx(0)
     assert gallons_to_cubic_feet(0) == pytest.approx(0)
+
+
+
+import pytest
+
+from src.units import kpa_to_psi, psi_to_kpa
+
+
+def test_kpa_to_psi_known_value():
+    assert kpa_to_psi(6.89476) == pytest.approx(1.0)
+
+
+def test_psi_to_kpa_known_value():
+    assert psi_to_kpa(1.0) == pytest.approx(6.89476)
+
+
+def test_pressure_round_trip():
+    starting_kpa = 350
+    restored_kpa = psi_to_kpa(kpa_to_psi(starting_kpa))
+    assert restored_kpa == pytest.approx(starting_kpa)
+
+
+def test_zero_pressure_conversions():
+    assert kpa_to_psi(0) == 0
+    assert psi_to_kpa(0) == 0
